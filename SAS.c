@@ -296,8 +296,8 @@ void Filtrer()
         }
         else if (r == 2)
         {
-            printf("Si tu veux les taches qui ont le statut complète tappez 1 \n");
-            printf("Si tu veux les taches qui ont le statut incomplète tappez 2 \n");
+            printf("Si tu veux les taches qui ont le statut complete tappez 1 \n");
+            printf("Si tu veux les taches qui ont le statut incomplete tappez 2 \n");
             printf("Entrez votre choix : \n");
             scanf("%d", &st);
             switch (st)
