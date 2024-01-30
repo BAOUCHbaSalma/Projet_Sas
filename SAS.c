@@ -262,6 +262,85 @@ void TriDecrooissant()
         }
     }
 }
+void Filtrer()
+{
+    int Mois;
+    int Jour;
+    int r;
+    int n;
+    int st;
+    if (Taille > 0)
+    {
+
+        printf("Si tu veux filtrer par Priorite tappez 1\n");
+        printf("Si tu veux filtrer par Statut tappez 2 \n");
+        printf("Si tu veux filtrer par Date tappez 3 \n");
+        scanf("%d", &r);
+        if (r == 1)
+        {
+            printf("Si tu veux les taches qui ont la Priorite URGENT tappez 1 \n");
+            printf("Si tu veux les taches qui ont la Priorite Pas URGENT tappez 2 \n");
+            printf("Entrez votre choix :");
+            scanf("%d", &n);
+            switch (n)
+            {
+            case 1:
+                UR();
+                break;
+            case 2:
+                URP();
+                break;
+            default:
+                printf("Ressayer une autre fois");
+            }
+        }
+        else if (r == 2)
+        {
+            printf("Si tu veux les taches qui ont le statut complète tappez 1 \n");
+            printf("Si tu veux les taches qui ont le statut incomplète tappez 2 \n");
+            printf("Entrez votre choix : \n");
+            scanf("%d", &st);
+            switch (st)
+            {
+            case 1:
+                CMP();
+                break;
+            case 2:
+                inCMP();
+                break;
+            default:
+                printf("Ressayer une autre fois");
+            }
+        }
+        else if (r == 3)
+        {
+            printf("Entrez la date par laquelle vous voullez filtrer \n");
+            printf("Entrez le Mois :\n");
+            scanf("%d", &Mois);
+            printf("Entrez le Jour :\n");
+            scanf("%d", &Jour);
+            for (int i = 0; i <= Taille; i++)
+            {
+                if (T[i].Date.Mois == Mois && T[i].Date.Jour == Jour)
+                {
+                    printf("*Tache %d* : \n", i + 1);
+                    printf("Nom : %s \n", T[i].Nom);
+                    printf("Description : %s \n", T[i].Description);
+                    printf("Priorite : %s \n", T[i].Priorite);
+                    printf("Statut : %s \n", T[i].Statut);
+                    printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+                    printf("Heurs: %d \n", T[i].Heurs.heurs);
+                }
+            }
+        }
+        else
+        {
+            printf("Ressayer une autre fois , votre choix indisponible!!");
+        }
+    }
+    else
+        printf("La liste des taches est vide , Aucune pour filtrer .");
+}
 
 int main(){
     MENU();
