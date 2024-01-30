@@ -229,6 +229,39 @@ void Ordonner()
     }
 }
 
+void TriCroissant()
+{
+    Taches t;
+    for (int i = 0; i < Taille - 1; i++)
+    {
+        for (int j = i + 1; j < Taille; j++)
+        {
+            if (T[i].Date.Mois > T[j].Date.Mois || (T[i].Date.Mois == T[j].Date.Mois && T[i].Date.Jour > T[j].Date.Jour))
+            {
+                t = T[i];
+                T[i] = T[j];
+                T[j] = t;
+            }
+        }
+    }
+}
+void TriDecrooissant()
+{
+
+    Taches t;
+    for (int i = 0; i < Taille - 1; i++)
+    {
+        for (int j = i + 1; j < Taille; j++)
+        {
+            if (T[i].Date.Mois < T[j].Date.Mois || (T[i].Date.Mois == T[j].Date.Mois && T[i].Date.Jour < T[j].Date.Jour))
+            {
+                t = T[i];
+                T[i] = T[j];
+                T[j] = t;
+            }
+        }
+    }
+}
 
 int main(){
     MENU();
