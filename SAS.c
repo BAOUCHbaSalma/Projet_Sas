@@ -210,6 +210,25 @@ void Supprimer()
 
     MENU();
 }
+void Ordonner()
+{
+    int Tr;
+    printf("Pour trier avec ordre croissant tappez 1, ordre decroissant tappez 2 \n");
+    scanf("%d", &Tr);
+    switch (Tr)
+    {
+    case 1:
+        TriCroissant();
+
+        break;
+    case 2:
+        TriDecrooissant();
+        break;
+    default:
+        printf("Ressayer une autre fois");
+    }
+}
+
 
 int main(){
     MENU();
