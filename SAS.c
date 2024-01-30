@@ -342,6 +342,42 @@ void Filtrer()
         printf("La liste des taches est vide , Aucune pour filtrer .");
 }
 
+void CMP()
+{
+    for (int i = 0; i <= Taille; i++)
+    {
+        if (strcmp(T[i].Statut, "COMPLETE") == 0)
+        {
+
+            printf("*Tache %d* : \n", i + 1);
+            printf("Nom : %s \n", T[i].Nom);
+            printf("Description : %s \n", T[i].Description);
+            printf("Priorite : %s \n", T[i].Priorite);
+            printf("Statut : %s \n", T[i].Statut);
+            printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+            printf("Heurs: %d \n", T[i].Heurs.heurs);
+        }
+    }
+}
+void inCMP()
+{
+    for (int i = 0; i <= Taille; i++)
+    {
+        if (strcmp(T[i].Statut, "INCOMPLETE") == 0)
+        {
+
+            printf("*Tache %d* : \n", i + 1);
+            printf("Nom : %s \n", T[i].Nom);
+            printf("Description : %s \n", T[i].Description);
+            printf("Priorite : %s \n", T[i].Priorite);
+            printf("Statut : %s \n", T[i].Statut);
+            printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+            printf("Heurs: %d \n", T[i].Heurs.heurs);
+        }
+    }
+}
+
+
 int main(){
     MENU();
 
