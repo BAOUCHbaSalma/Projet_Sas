@@ -181,6 +181,36 @@ void Modifier()
     MENU();
 }
 
+void Supprimer()
+{
+    if (Taille > 0)
+    {
+        int NBR;
+        int i;
+        printf("Entrer le numero de la tache pour supprimer : ");
+        scanf("%d", &NBR);
+        if (NBR = 1 && NBR <= Taille)
+        {
+            for (i = NBR - 1; i < Taille - 1; i++)
+            {
+                T[i] = T[i + 1];
+            }
+            Taille--;
+            printf("Tache supprimee avec succes!\n");
+        }
+        else
+        {
+            printf("Aucune tache avec ce numero.\n");
+        }
+    }
+    else
+    {
+        printf("La liste des Taches Vide . Ancune Tache a supprimer");
+    }
+
+    MENU();
+}
+
 int main(){
     MENU();
 
