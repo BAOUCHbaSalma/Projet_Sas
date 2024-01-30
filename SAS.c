@@ -107,6 +107,31 @@ void Ajouter()
     MENU();
 }
 
+void Afficher()
+{
+    if (Taille > 0)
+    {
+
+        printf("\n\t\t*********LA LISTE DES TACHES*********\n\n");
+        for (int i = 0; i < Taille; i++)
+        {
+            printf("*Tache %d* : \n", i + 1);
+            printf("Nom : %s \n", T[i].Nom);
+            printf("Description : %s \n", T[i].Description);
+            printf("Priorite : %s \n", T[i].Priorite);
+            printf("Statut : %s \n", T[i].Statut);
+            printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+            printf("Heurs: %d \n", T[i].Heurs.heurs);
+
+            printf("\n");
+        }
+    }
+    else
+    {
+        printf("Aucune tache a Afficher.\n");
+    }
+}
+
 int main(){
     MENU();
 
