@@ -376,6 +376,43 @@ void inCMP()
         }
     }
 }
+void UR()
+{
+
+    for (int i = 0; i <= Taille; i++)
+    {
+        if (strcmp(T[i].Priorite, "URGENT") == 0)
+        {
+
+            printf("*Tache %d* : \n", i + 1);
+            printf("Nom : %s \n", T[i].Nom);
+            printf("Description : %s \n", T[i].Description);
+            printf("Priorite : %s \n", T[i].Priorite);
+            printf("Statut : %s \n", T[i].Statut);
+            printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+            printf("Heurs: %d \n", T[i].Heurs.heurs);
+        }
+    }
+}
+
+void URP()
+{
+
+    for (int i = 0; i <= Taille; i++)
+    {
+        if (strcmp(T[i].Priorite, "PAS URGENT") == 0)
+        {
+
+            printf("*Tache %d* : \n", i + 1);
+            printf("Nom : %s \n", T[i].Nom);
+            printf("Description : %s \n", T[i].Description);
+            printf("Priorite : %s \n", T[i].Priorite);
+            printf("Statut : %s \n", T[i].Statut);
+            printf("Date : %d/%d \n", T[i].Date.Jour, T[i].Date.Mois);
+            printf("Heurs: %d \n", T[i].Heurs.heurs);
+        }
+    }
+}
 
 
 int main(){
