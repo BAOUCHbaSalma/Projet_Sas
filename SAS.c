@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct
 {
@@ -68,7 +69,46 @@ void MENU()
 int Taille = 0;
 Taches T[100];
 
+void Ajouter()
+{
+    if (Taille < 100)
+    {
+        getchar();
+
+        printf("ENTREZ LE NOM DE VOTRE TACHE : ");
+        gets(T[Taille].Nom);
+
+        printf("ENTREZ LA DESCRIPTION DE VOTRE TACHE :");
+        gets(T[Taille].Description);
+
+        printf("ENTREZ LA PRIORITE DE VOTRE TACHE :");
+        gets(T[Taille].Priorite);
+
+        printf("ENTREZ LE STATUT DE VOTRE TACHE :");
+        gets(T[Taille].Statut);
+
+        printf("ENTREZ LE JOUR DE VOTRE TACHE : ");
+        scanf("%d", &T[Taille].Date.Jour);
+
+        printf("ENTREZ LE MOIS DE VOTRE TACHE : ");
+        scanf("%d", &T[Taille].Date.Mois);
+
+        printf("ENTREZ L'HEURS DE VOTRE TACHE : ");
+        scanf("%d", &T[Taille].Heurs.heurs);
+
+        Taille++;
+        printf("Tache Ajouter Avec Succes!\n");
+    }
+    else
+    {
+        printf("La liste des taches est pleine impossible d'ajouter plus de taches.\n");
+    }
+
+    MENU();
+}
+
 int main(){
+    MENU();
 
     return 0;
 }
