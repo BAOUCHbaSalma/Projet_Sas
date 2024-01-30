@@ -132,6 +132,55 @@ void Afficher()
     }
 }
 
+void Modifier()
+{
+    if (Taille > 0)
+    {
+        int NBR;
+        printf("Entrez le numero de la tache pour la  modifier : ");
+        scanf("%d", &NBR);
+        if (NBR >= 1 && NBR <= Taille)
+        {
+            getchar();
+            printf("ENTREZ LE NOUVEAU NOM DE VOTRE TACHE : ");
+
+            gets(T[NBR - 1].Nom);
+
+            printf("ENTREZ LA NOUVELLE DESCRIPTION DE VOTRE TACHE : ");
+
+            gets(T[NBR - 1].Description);
+
+            printf("ENTREZ LA NOUVELLE PRIORITE DE VOTRE TACHE : ");
+
+            gets(T[NBR - 1].Priorite);
+
+            printf("ENTREZ LE NOUVEAU STATUT DE VOTRE TACHE : ");
+
+            gets(T[NBR - 1].Statut);
+
+            printf("ENTREZ LE NOUVEAU JOUR DE VOTRE TACHE : ");
+            scanf("%d", &T[NBR - 1].Date.Jour);
+
+            printf("ENTREZ LE NOUVEAU MOIS DE VOTRE TACHE : ");
+            scanf("%d", &T[NBR - 1].Date.Mois);
+
+            printf("ENTREZ LA NOUVELLE HEURS DE VOTRE TACHE : ");
+            scanf("%d", &T[NBR - 1].Heurs.heurs);
+            printf("Tache modifiee avec succes!\n");
+        }
+        else
+        {
+            printf("Aucune tache avec ce numero.\n");
+        }
+    }
+    else
+    {
+        printf("La liste des taches est vide ,Aucun tache a modifier\n");
+    }
+
+    MENU();
+}
+
 int main(){
     MENU();
 
